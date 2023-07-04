@@ -1,1 +1,11 @@
-sajgwakfgvagf
+from mercado import app
+from mercado import db
+ app.app_context().push()
+ db.drop_all()
+db.create_all()
+
+from mercado import app
+from mercado import db
+ app.app_context().push()
+from mercado.models import User, Item
+>>> user1 = User(usuario="Fulano", email="fulano@email.com", senha="12345", valor=1000)
