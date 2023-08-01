@@ -31,6 +31,9 @@ class User(db.Model, UserMixin):
     def converte_senha(self, senha_texto_claro):
         return bcrypt.check_password_hash(self.senha, senha_texto_claro)
 
+    def compra_disponivel(self, produto_obj):
+        return self.valor >= produto_obj.preco
+
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(length=30), nullable=False, unique=True)

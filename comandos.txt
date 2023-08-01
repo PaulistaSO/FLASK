@@ -9,3 +9,19 @@ from mercado import db
  app.app_context().push()
 from mercado.models import User, Item
 >>> user1 = User(usuario="Fulano", email="fulano@email.com", senha="12345", valor=1000)
+
+python -m venv .venv
+.\.venv\Scripts\activate
+pip install flask
+pip install flask_sqlalchemy
+pip install mercado
+pip install flask_wtf
+pip install email_validator
+pip install flask_bcrypt
+flask --app mercado run
+
+
+produto_obj.dono = current_user.id
+            current_user.valor -= produto_obj.preco
+            db.session.commit()
+            flash(f"Parabéns, você comprou esse produto {produto_obj.nome}", category="success")
